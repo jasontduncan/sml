@@ -1,0 +1,14 @@
+{
+  "name": "sml",
+  "version": "1.0.0",
+  "description": "Collaborative code canvas example",
+  "type": "module",
+  "scripts": {
+    "server": "node server.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ws": "^8.15.0"
+  }
+}

@@ -1,17 +1,19 @@
-# Hello World
+# Collaborative Code Canvas
 
-This repository contains a minimal **Hello World** web page located in `index.html`.
+This repository hosts a minimal browser-based collaborative code editor with live HTML preview.
 
-## Viewing locally
+## Running locally
 
-You can open `index.html` in any web browser to see the page.
+1. Install dependencies:
 
-## Publishing with GitHub Pages
+   ```bash
+   npm install
+   ```
 
-1. Commit and push this repository to GitHub.
-2. In the repository settings on GitHub, find **Pages** in the sidebar.
-3. Under **Source**, select the branch (e.g., `main`) and the root folder.
-4. Save your choice and wait a minute for the site to be built.
-5. Your site will be available at `https://<your-github-username>.github.io/<repository-name>/`.
+2. Start the development server:
 
-Once GitHub Pages is enabled, your Hello World page will be accessible online.
+   ```bash
+   npm run server
+   ```
+
+3. Open [http://localhost:3000](http://localhost:3000) in your browser. Open the page in multiple tabs or browsers to see the shared editor in action.

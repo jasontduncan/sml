@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.css"/>
+  <style>
+    #editor, #preview { width: 50%; height: 100vh; float: left; }
+  </style>
+</head>
+<body>
+  <textarea id="editor"></textarea>
+  <iframe id="preview"></iframe>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/htmlmixed/htmlmixed.min.js"></script>
+  <script>
+    const editor = CodeMirror.fromTextArea(document.getElementById('editor'), {mode: 'htmlmixed'});
+    const preview = document.getElementById('preview');
+    const ws = new WebSocket(`ws://${location.host}`);
+
+    ws.onmessage = e => {
+      editor.setValue(e.data);
+      updatePreview(e.data);
+    };
+
+    editor.on('change', () => {
+      const val = editor.getValue();
+      updatePreview(val);
+      ws.send(val);
+    });
+
+    function updatePreview(val) {
+      preview.srcdoc = val;
+    }
+  </script>
+</body>
+</html>
