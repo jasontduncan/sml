@@ -21,5 +21,5 @@ This repository hosts a minimal browser-based collaborative code editor with liv
 ## Viewing on GitHub Pages
 
 The latest version of this project is available via GitHub Pages at
-[https://jasontduncan.github.io/sml/](https://jasontduncan.github.io/sml/).
+[https://jasontduncan.github.io/sml/public/index.html](https://jasontduncan.github.io/sml/public/index.html).
 Simply visit the link to try the collaborative editor without running a local server.
